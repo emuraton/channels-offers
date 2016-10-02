@@ -1,12 +1,14 @@
 import * as actionTypes from './actionTypes';
+import {CALL_API} from '../middleware/api';
 
 /**
- * Initialize a new game.
+ * Save in the store the customerID
  */
-export function myAction() {
+export function saveInStoreCustomerID(customerId) {
   return dispatch => {
     dispatch({
-      type: actionTypes.MY_ACTION,
+      type: actionTypes.SAVE_INSTORE_CUSTOMERID,
+      customerId
     });
   };
 }

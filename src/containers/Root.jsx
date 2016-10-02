@@ -5,6 +5,8 @@ import Catalogue from 'components/Catalogue'
 
 const mapStateToProps = (state) => {
   return {
+    packagesChannels: state.catalogue.get('packagesChannels'),
+    customer: state.catalogue.get('customer'),
   }
 }
 
@@ -17,6 +19,6 @@ const mapDispatchToProps = (dispatch) => {
 const Root = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Catalogue)
+)(Catalogue);
 
-export default Root
+export default Root;
