@@ -25,7 +25,7 @@ class ProductSelection extends Component {
     super(props);
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const {actions, customerLocation, packagesChannels} = this.props;
     //Fetch channels available
     if(!packagesChannels) actions.fetchChannelsPackage(customerLocation);
@@ -45,10 +45,17 @@ class ProductSelection extends Component {
     }
   }
 
+  _handleSubmit = (e) => {
+    // actions
+    e.preventDefault();
+    this.props.changeContextViewPanel(<Confirm/>);
+
+  }
+
   render() {
     return (
       <div style={styles.mainDiv}>
-        <form style={styles.container}>
+        <form onSubmit={this._handleSubmit} style={styles.form}>
           {this._showPackages()}
         </form>
       </div>
