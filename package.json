@@ -6,9 +6,11 @@
   "scripts": {
     "start": "node devServer.js --env=dev",
     "lint": "eslint ./src",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config cfg/dist.js",
     "test": "karma start",
-    "test:watch": "karma start --autoWatch=true --singleRun=false"
+    "test:watch": "karma start --autoWatch=true --singleRun=false",
+    "dist": "npm run copy & webpack --env=dist",
+    "copy": "copyfiles -f ./src/index.html ./dist",
+    "clean": "rimraf dist/*"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +37,7 @@
     "babel-preset-stage-1": "6.13.0",
     "babel-loader": "6.2.5",
     "chai": "3.5.0",
+    "copyfiles": "^0.2.1",
     "json-loader": "0.5.4",
     "style-loader": "0.13.1",
     "cross-env": "2.0.1",

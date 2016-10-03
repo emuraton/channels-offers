@@ -20,6 +20,7 @@ var configs = {
   base: require(path.join(__dirname, 'cfg/base')),
   dev: require(path.join(__dirname, 'cfg/dev')),
   test: require(path.join(__dirname, 'cfg/test')),
+  dist: require(path.join(__dirname, 'cfg/dist')),
 };
 
 /**
