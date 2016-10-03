@@ -41,7 +41,7 @@ class ChannelPackage extends Component {
 
   _showCheckout = () => {
     const {isLastOne} = this.props;
-    return (isLastOne ? <button type="button" id='checkout' style={styles.checkout}>Checkout</button> : <span></span>);
+    return (isLastOne ? <button type="submit" id='checkout' style={styles.checkout}>Checkout</button> : <span></span>);
   }
 
   render() {
@@ -60,7 +60,9 @@ class ChannelPackage extends Component {
 }
 
 ChannelPackage.propTypes = {
+  actions: PropTypes.object.isRequired,
   channels: PropTypes.array.isRequired,
+  category: PropTypes.string.isRequired,
   isLastOne: PropTypes.bool,
 }
 

@@ -1,12 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 import ChannelPackage from './ChannelPackage';
+import Confirm from 'containers/Confirm';
 import {getCookie, setCookie} from 'utils/utils'
 
 /*
 *   Inline style
 */
 const styles = {
-  container: {
+  form: {
     display : 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
@@ -56,9 +57,9 @@ class ProductSelection extends Component {
 }
 
 ProductSelection.propTypes = {
-  customerLocation: PropTypes.string.isRequired,
-  fetchCustomerLocation: PropTypes.func.isRequired,
-  packagesChannels: PropTypes.array
+  actions: PropTypes.object.isRequired,
+  customerLocation: PropTypes.string,
+  packagesChannels: PropTypes.array,
 }
 
 export default ProductSelection;

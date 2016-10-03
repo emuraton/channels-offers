@@ -49,7 +49,9 @@ class Catalogue extends Component {
 }
 
 Catalogue.propTypes = {
-  customer: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired,
+  customer: PropTypes.object,
+  packagesChannels: PropTypes.array,
 }
 
 export default Catalogue;

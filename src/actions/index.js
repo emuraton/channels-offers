@@ -17,7 +17,7 @@ export function addChannelInBasket(channel) {
   return dispatch => {
     dispatch({
       type: actionTypes.ADD_IN_BASKET,
-      channelId: channel.id,
+      channel: channel,
     });
   };
 }
@@ -26,7 +26,7 @@ export function removeChannelFromBasket(channel) {
   return dispatch => {
     dispatch({
       type: actionTypes.REMOVE_FROM_BASKET,
-      channelId: channel.id,
+      channel: channel,
     });
   };
 }
