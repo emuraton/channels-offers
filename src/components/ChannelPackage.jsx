@@ -41,7 +41,7 @@ class ChannelPackage extends Component {
 
   _showCheckout = () => {
     const {isLastOne} = this.props;
-    return (isLastOne ? <button type="button" style={styles.checkout}>Checkout</button> : <span></span>);
+    return (isLastOne ? <button type="button" id='checkout' style={styles.checkout}>Checkout</button> : <span></span>);
   }
 
   render() {
