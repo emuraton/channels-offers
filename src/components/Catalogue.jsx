@@ -10,6 +10,7 @@ class Catalogue extends Component {
     super(props);
   }
 
+  // For this code we presume customer is already logged, so we'll stub his cookie.
   componentDidMount() {
     const {actions} = this.props;
     //To make it faster, i'll act as if the cookie is not crypted
@@ -22,7 +23,8 @@ class Catalogue extends Component {
 
   componentDidUpdate() {
     const {actions, customer} = this.props;
-    if (!customer.get('location')) actions.fetchCustomerLocation(customer.get('id'));
+    //Fetch customer location (must be done when we have the customerID)
+    if (customer.get('id') && !customer.get('location')) actions.fetchCustomerLocation(customer.get('id'));
   }
 
   _showProductSelection = () => {

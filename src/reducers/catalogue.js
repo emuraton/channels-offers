@@ -23,3 +23,13 @@ export default (state = initialState, action) => {
       return state;
   }
 }
+
+
+function addChannel(state, channelId) {
+  return state.updateIn(['basket'], channels => channels.push(channelId));
+}
+
+function removeChannel(state, channelId) {
+  let indexToRemove = state.get('basket').indexOf(channelId);
+  return state.updateIn(['basket'], channels => channels.delete(indexToRemove));
+}
